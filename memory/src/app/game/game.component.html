@@ -1,10 +1,15 @@
+<div id="screen">
 <main id="game">
+    <div class="menu">
+        <button (click)="confirmNewGame('Are you sure you want to start a new game')">New Game</button>
+
+    </div>
     <h1 class="animate__animated animate__bounce">{{ gameTitle }}</h1>
     <div id="stats">
         <div id="score">
             Score: <span class="{{animationScore}}">{{ score }}</span>
     </div>
-    <div id="time">Left: <span>{{ timeLeft }}</span></div>
+    <div id="time">Left: <span>{{ humanTimeLeft }}</span></div>
     </div>
 
     <section id="controls">
@@ -20,3 +25,7 @@
     <img class="{{ animationGuessClasses }}" src="assets/cards/{{ cardSrc }}">
 
 </main>
+<aside id="aside">
+    <app-high-scores [winners]="winners"></app-high-scores>
+</aside>
+</div>
